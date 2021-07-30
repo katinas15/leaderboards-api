@@ -5,9 +5,7 @@ export const postScore = async (req: Request, res: Response) => {
   try {
     const game = req.params.game;
     const { name, score } = req.body;
-    console.log(game);
     const newScore = new Leaderboard({ name, score, game });
-    console.log(game);
     console.log(newScore);
     await newScore.save();
     console.log(game);
