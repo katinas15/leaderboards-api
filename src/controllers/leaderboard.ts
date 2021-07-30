@@ -20,7 +20,9 @@ export const getScores = async (req: Request, res: Response) => {
   try {
     const game = req.params.game;
     console.log(game);
-    const scores: LeaderboardScore[] = await Leaderboard.find({ game });
+    const scores: LeaderboardScore[] = await Leaderboard.find({ game }).sort({
+      score: "descending",
+    });
     console.log(game);
     res.status(200).json(scores);
     return;

@@ -8,7 +8,7 @@ export interface LeaderboardScore {
 
 const schema = new Schema<LeaderboardScore>({
   name: { type: String, required: true },
-  score: { type: String, required: true },
+  score: { type: Number, required: true },
   game: { type: String, required: true },
 });
 
